@@ -1,0 +1,4 @@
+en_US:
+  EditableOrderFormField:
+    PLURALNAME: 'Order Forms'
+    SINGULARNAME: 'Order Form'
