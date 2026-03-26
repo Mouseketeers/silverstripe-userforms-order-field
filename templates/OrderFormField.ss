@@ -1,5 +1,3 @@
-<% require javascript(userforms-order-field/vendor/devbridge-autocomplete/dist/jquery.autocomplete.min.js) %>
-<% require javascript(userforms-order-field/javascript/order-form-field.js) %>
 <div $AttributesHTML>
 	<table id="$Name" class="order-form-table">
 		<thead>

@@ -1,10 +1,10 @@
 <?php
 
-namespace UserForms\OrderField;
+namespace Mouseketeers\UserForms\OrderField;
 
 use SilverStripe\Core\Convert;
 use SilverStripe\Forms\TextField;
-use SilverStripe\UserForms\Edit\EditableFormField;
+use SilverStripe\UserForms\Model\EditableFormField;
 
 class EditableOrderFormField extends EditableFormField {
 
@@ -69,6 +69,6 @@ class EditableOrderFormField extends EditableFormField {
 		return $result;
 	}
 	public function getIcon() {
-		return 'userforms-order-field/images/editabletextfield.png';
+		return 'mouseketeers/userforms-order-field:images/editabletextfield.png';
 	}
 }
