@@ -1,5 +1,5 @@
 {
-  "name": "mouseketeers/userforms-order-field",
+  "name": "mouseketeers/silverstripe-userforms-order-field",
   "description": "Order form field for SilverStripe UserForms",
   "authors": [
     {
@@ -28,7 +28,11 @@
   },
   "minimum-stability": "stable",
   "extra": {
-    "installer-name": "userforms-order-field"
+    "installer-name": "userforms-order-field",
+    "expose": [
+      "javascript",
+      "vendor"
+    ]
   },
   "autoload": {
     "psr-4": {

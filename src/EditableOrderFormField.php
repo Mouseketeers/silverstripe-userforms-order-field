@@ -4,39 +4,65 @@ namespace Mouseketeers\UserForms\OrderField;
 
 use SilverStripe\Core\Convert;
 use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\FieldList;
 use SilverStripe\UserForms\Model\EditableFormField;
 
 class EditableOrderFormField extends EditableFormField {
 
 	private static $singular_name = 'Order Form';
 	
-	private static $plural_name = 'Order Forms';	
+	private static $plural_name = 'Order Forms';
+
+	private static $table_name = 'EditableOrderFormField';
+
+	private static $db = [
+		'AutoCompleteSource' => 'Varchar(255)',
+		'Query' => 'Varchar(255)'
+	];	
 
 
 	public function getFieldConfiguration() {
 		$options = parent::getFieldConfiguration();
 
 		$sourceField = new TextField(
-			$this->getSettingName('AutoCompleteSource'),
+			'AutoCompleteSource',
 			'Auto Complete Source', 
-			$this->getSetting('AutoCompleteSource')
+			$this->AutoCompleteSource
 		);
+		$sourceField->setName('AutoCompleteSource');
 		$options->push($sourceField);
 		
 		$queryField = new TextField(
-			$this->getSettingName('Query'),
+			'Query',
 			'Query', 
-			$this->getSetting('Query')
+			$this->Query
 		);
+		$queryField->setName('Query');
 		$options->push($queryField);
 
 			
 		return $options;
 	}
+
+	public function getCMSFields() {
+		$fields = parent::getCMSFields();
+		
+		$fields->addFieldToTab('Root.Main', TextField::create(
+			'AutoCompleteSource',
+			'Auto Complete Source'
+		));
+		
+		$fields->addFieldToTab('Root.Main', TextField::create(
+			'Query', 
+			'Query'
+		));
+		
+		return $fields;
+	}
 	public function getFormField() {
 		return OrderFormField::create($this->Name, $this->Title)
-			->setAutoCompleteSource($this->getSetting('AutoCompleteSource'))
-			->setQuery($this->getSetting('Query'));
+			->setAutoCompleteSource($this->AutoCompleteSource)
+			->setQuery($this->Query);
 	}
 	
 	public function getValueFromData($data) {

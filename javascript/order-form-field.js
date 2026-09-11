@@ -1,10 +1,14 @@
 $(document).ready(function() {
 
+	
+
 	var orderFormTables = $('.order-form-table');
 
 	orderFormTables.on('focus.autocomplete', '.autocomplete', function () {
 
 		var data = $(this).data();
+
+		console.log($(this));
 
 		if(data.source) {
 
@@ -34,11 +38,12 @@ $(document).ready(function() {
 				},
 				onSearchError: function(query, jqXHR, textStatus, errorThrown) {
 					// todo
-					console.log(textStatus);
+					console.log('error');
 				}
 			});
 			$(this).on('focusout', function() {
 				
+				console.log('focusout');
 				var value = this.value;
 				
 				if(value) {

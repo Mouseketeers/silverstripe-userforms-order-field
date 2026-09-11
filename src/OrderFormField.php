@@ -1,11 +1,13 @@
 <?php
 
-namespace UserForms\OrderField;
+namespace Mouseketeers\UserForms\OrderField;
 
 use SilverStripe\Forms\FormField;
 use SilverStripe\View\Requirements;
 
 class OrderFormField extends FormField {
+
+	private static $table_name = 'OrderFormField';
 
 	protected $autoCompleteSource;
 	protected $query;
@@ -13,9 +15,12 @@ class OrderFormField extends FormField {
 	public function __construct($name, $title = null, $value = null) {
 		parent::__construct($name, $title, $value);
 		
+		// Add jQuery requirement first (using UserForms jQuery)
+		Requirements::javascript('silverstripe/userforms:client/dist/js/jquery.min.js');
+		
 		// Add required JavaScript and CSS
-		Requirements::javascript('henrikolsen/userforms-order-field:vendor/devbridge-autocomplete/dist/jquery.autocomplete.min.js');
-		Requirements::javascript('henrikolsen/userforms-order-field:javascript/order-form-field.js');
+		Requirements::javascript('mouseketeers/userforms-order-field:vendor/devbridge-autocomplete/dist/jquery.autocomplete.min.js');
+		Requirements::javascript('mouseketeers/userforms-order-field:javascript/order-form-field.js');
 	}
 
 	public function AutoCompleteSource() {
