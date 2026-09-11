@@ -1,0 +1,35 @@
+{
+  "name": "mouseketeers/silverstripe-userforms-order-field",
+  "description": "Order form field for SilverStripe UserForms",
+  "authors": [
+    {
+      "name": "Mouseketeers",
+      "email": "support@mouseketeers.dk",
+      "homepage": "http://www.mouseketeers.dk"
+    }
+  ],
+  "type": "silverstripe-module",
+  "keywords": [
+    "silverstripe",
+    "userforms",
+    "order",
+    "form",
+    "field"
+  ],
+  "license": "BSD-3-Clause",
+  "require": {
+    "php": "^5.3.3 || ^7.0",
+    "composer/installers": "^1.0",
+    "silverstripe/framework": "~3.7.0",
+    "silverstripe/userforms": "^4.0"
+  },
+  "minimum-stability": "stable",
+  "extra": {
+    "installer-name": "userforms-order-field"
+  },
+  "autoload": {
+    "classmap": [
+      "code/"
+    ]
+  }
+}
