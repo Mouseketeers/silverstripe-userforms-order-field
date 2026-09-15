@@ -28,7 +28,6 @@
   },
   "minimum-stability": "stable",
   "extra": {
-    "installer-name": "userforms-order-field",
     "expose": [
       "javascript",
       "vendor"

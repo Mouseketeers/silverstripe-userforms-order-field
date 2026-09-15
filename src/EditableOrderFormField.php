@@ -2,9 +2,7 @@
 
 namespace Mouseketeers\UserForms\OrderField;
 
-use SilverStripe\Core\Convert;
 use SilverStripe\Forms\TextField;
-use SilverStripe\Forms\FieldList;
 use SilverStripe\UserForms\Model\EditableFormField;
 
 class EditableOrderFormField extends EditableFormField {
@@ -82,19 +80,9 @@ class EditableOrderFormField extends EditableFormField {
 			for($i = 0; $i < $rowsCount; $i++) {
 				if($qty[$i] && $item[$i]) {			
 					$result .= $qty[$i] . ' x ' . $item[$i] . "\n";
-					// for($q = 0; $q < $qty[$i]; $q++) {
-					// 	$submission = new OrderFormSubmission();
-					// 	$submission->Item = $item[$i];
-					// 	$submission->Type = $this->Title;
-					// 	$submission->FormFieldID = $this->ID;
-					// 	$submission->write();
-					// }
 				}
 			}
 		}
 		return $result;
-	}
-	public function getIcon() {
-		return 'mouseketeers/userforms-order-field:images/editabletextfield.png';
 	}
 }

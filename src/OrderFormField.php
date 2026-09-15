@@ -19,8 +19,8 @@ class OrderFormField extends FormField {
 		Requirements::javascript('silverstripe/userforms:client/dist/js/jquery.min.js');
 		
 		// Add required JavaScript and CSS
-		Requirements::javascript('mouseketeers/userforms-order-field:vendor/devbridge-autocomplete/dist/jquery.autocomplete.min.js');
-		Requirements::javascript('mouseketeers/userforms-order-field:javascript/order-form-field.js');
+		Requirements::javascript('mouseketeers/silverstripe-userforms-order-field:vendor/devbridge-autocomplete/dist/jquery.autocomplete.min.js');
+		Requirements::javascript('mouseketeers/silverstripe-userforms-order-field:javascript/order-form-field.js');
 	}
 
 	public function AutoCompleteSource() {
