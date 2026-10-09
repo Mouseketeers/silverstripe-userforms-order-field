@@ -49,7 +49,7 @@ class OrderFormField extends FormField {
 	public function Type() {
 		return 'order-form-field';
 	}
-	public function validate($validator) {
+	public function validate($validator = null): \SilverStripe\Core\Validation\ValidationResult {
 		// $values = $this->value;
 		// if (!$values) {
 		// 	return true;
