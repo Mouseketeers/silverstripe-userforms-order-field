@@ -40,10 +40,10 @@ class OrderFormField extends FormField {
 	public function getAttributes() {
 		return array_merge(
 			parent::getAttributes(),
-			array(
+			[
 				'type' => null,
 				'value' => null
-			)
+			]
 		);
 	}
 	public function Type() {

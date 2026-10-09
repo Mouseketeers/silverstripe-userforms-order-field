@@ -67,9 +67,9 @@ class EditableOrderFormField extends EditableFormField {
 
 		$result = '';
 
-		$orderItems = array();
+		$orderItems = [];
 
-		$orderData = (isset($data[$this->Name])) ? $data[$this->Name] : false;
+		$orderData = $data[$this->Name] ?? false;
 		
 		if($orderData) {
 
