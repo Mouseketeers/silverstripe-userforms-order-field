@@ -19,21 +19,6 @@ class EditableOrderFormField extends EditableFormField {
 	];	
 
 
-	public function getFieldConfiguration() {
-		$options = parent::getFieldConfiguration();
-
-		$sourceField = TextField::create('AutoCompleteSource', 'Auto Complete Source', $this->AutoCompleteSource);
-		$sourceField->setName('AutoCompleteSource');
-		$options->push($sourceField);
-		
-		$queryField = TextField::create('Query', 'Query', $this->Query);
-		$queryField->setName('Query');
-		$options->push($queryField);
-
-			
-		return $options;
-	}
-
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 		
